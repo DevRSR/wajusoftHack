@@ -8,7 +8,7 @@ function Trends({ trendsData }) {
 
 
     function getGradient(ctx,chartArea) {
-        const { top, bottom, left, right } = chartArea;
+        const { top, bottom, left, } = chartArea;
 
         const gradientBg = ctx.createLinearGradient(0,top,0,bottom);
 
