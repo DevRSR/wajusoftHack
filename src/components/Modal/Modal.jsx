@@ -2,31 +2,31 @@ import React, { forwardRef } from 'react'
 
 const Modal = forwardRef(function Modal({ invoice, status, total }, ref) {
   return (
-    <dialog ref={ref} className=' w-1/3 rounded-lg backdrop:bg-black/35' >
+    <dialog ref={ref} className=' w-full md:w-1/3 rounded-lg backdrop:bg-black/35' >
         {invoice && <div className=' flex flex-col bg-white dark:bg-black dark:text-white bg-light-red p-6'>
-            <h4 className=' text-lg font-semibold mb-4 text-center'>Transaction Detail:</h4>
+            <h4 className=' text-sm md:text-lg font-semibold mb-4 text-center'>Transaction Detail:</h4>
 
-            <div className=' flex flex-col gap-2'>
-                <div className=' flex items-center gap-2 text-sm'>
+            <div className=' flex text-xs md:text-sm flex-col gap-2'>
+                <div className=' flex items-center gap-2'>
                     <div>Invoice No:</div>
                     <div>{ invoice.number }</div>
                 </div>
-                <div className=' flex items-center gap-2 text-sm'>
+                <div className=' flex items-center gap-2'>
                     <div>Custumer No:</div>
                     <div>{ invoice.customer }</div>
                 </div>
-                <div className=' flex items-center gap-2 text-sm'>
+                <div className=' flex items-center gap-2'>
                     <div>Invoice date:</div>
                     <div>{ invoice.date }</div>
                 </div>
-                <div className=' flex items-center gap-2 text-sm'>
+                <div className=' flex items-center gap-2'>
                     <div>Status:</div>
                     <div className={`${ status == "Paid" ? 'text-custom-green' : "text-custom-red"}`} >{ status }</div>
                 </div>
             </div>
 
-            <div className=' flex flex-col gap-2 my-4'>
-                <div className="flex justify-between border-b border-coffee items-center text-sm">
+            <div className=' flex flex-col gap-2 my-4 text-xs md:text-sm'>
+                <div className="flex justify-between border-b border-coffee items-center ">
                     <h4 className=' basis-2/3'>Name</h4>
                     <h4>Qty</h4>
                     <h4>Price</h4>
@@ -42,7 +42,7 @@ const Modal = forwardRef(function Modal({ invoice, status, total }, ref) {
                 </div>
             </div>
 
-            <div className='flex w-full justify-end text-sm'>
+            <div className='flex w-full justify-end text-xs md:text-sm'>
                 <div className='flex flex-col gap-2'>
                     <p className=' font-bold'>Total Price</p>
                     <span><strong>{ total }</strong></span>
